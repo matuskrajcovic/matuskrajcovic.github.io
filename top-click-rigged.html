@@ -1308,7 +1308,7 @@
                   <h5 class="modal-title" id="endModalLabel">If your are sure about your choice, click "Done" at the bottom of your screen.</h5>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" onclick="logAction('CHANGEMIND')">I changed my mind</button>
+                  <button type="button" id="changemind" class="btn btn-outline-primary" data-bs-dismiss="modal">I changed my mind</button>
                 </div>
               </div>
             </div>
@@ -1350,17 +1350,6 @@
             }
         }
 
-        //logs user's action
-        function logAction(name, type=null, path=null) {
-            let date = new Date();
-            console.log({
-                name: name,
-                type: type, 
-                path: path,
-                timestamp: date.toISOString()
-            })
-        }
-
         window.onload = async () => {
 
             colors = ['#4374a6','#e0457b','#92ba1f','#ffb600','#ffb600','#8a8d8f','#00a3e0','#309b42','#57c0d4','#f2cb27'];
@@ -1383,28 +1372,18 @@
                 element.style.color = colors[choices[index]];
             });
 
-            // logs hover events
-            document.querySelectorAll('.nav-link, .dropdown-item').forEach(element => {
-                element.onmouseenter = ev => logAction(element.innerText, 'hover', element.id)
-                element.onmouseleave = ev => logAction(element.innerText, 'leave', element.id)
-                element.onclick = ev => logAction(element.innerText, 'click', element.id)
-            })
-
             document.querySelectorAll('.dropdown-item').forEach(element => {
                 let parent = element.parentElement.parentElement
                 element.onmouseenter = ev => {
-                    logAction(element.innerText, 'hover', element.id);
                     element.style.paddingLeft='32px';
                     element.style.paddingTop='16px';
                     element.style.paddingBottom='16px';
                 }
                 element.onmouseleave = ev => {
-                    logAction(element.innerText, 'leave', element.id);
                     element.style.paddingLeft='16px';
                     element.style.paddingTop='4px';
                     element.style.paddingBottom='4px';
                 }
-                element.onclick = ev => logAction(element.innerText, 'click', element.id);
             });
 
             playAd();

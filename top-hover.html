@@ -1293,7 +1293,7 @@
                   <h5 class="modal-title" id="endModalLabel">If your are sure about your choice, click "Done" at the bottom of your screen.</h5>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" onclick="logAction('CHANGEMIND')">I changed my mind</button>
+                  <button type="button" id="changemind" class="btn btn-outline-primary" data-bs-dismiss="modal">I changed my mind</button>
                 </div>
               </div>
             </div>
@@ -1303,18 +1303,6 @@
     <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
     <script>
         window.onload = async () => {
-
-            //logs user's action
-            function logAction(name, type=null, path=null) {
-                let date = new Date();
-                console.log({
-                    name: name,
-                    type: type, 
-                    path: path,
-                    timestamp: date.toISOString()
-                })
-            }
-            
             // prevents click behavior of menu items
             document.querySelectorAll('.custom-submenu, .nav-item').forEach(dropdown => {
                 dropdown.onclick = ev => {
@@ -1328,13 +1316,6 @@
                     dropdown.querySelector('a').classList.remove("show");
                 }
             })
-
-            // logs hover events
-            document.querySelectorAll('.nav-link, .dropdown-item').forEach(element => {
-                element.onmouseenter = ev => logAction(element.innerText, 'hover', element.id);
-                element.onmouseleave = ev => logAction(element.innerText, 'leave', element.id);
-                element.onclick = ev => logAction(element.innerText, 'click', element.id);
-            });
         }
     </script>
 </body>
