@@ -20,8 +20,8 @@
         .custom-submenu .dropdown-toggle:after {
             transform: rotate(-90deg);
         }
-        .dropdown a {
-            line-height: 2;
+        .dropdown-toggle:after {
+            display: none;
         }
         li > a > span {
             background-image: linear-gradient(#4374a6,#4374a6);
@@ -29,6 +29,17 @@
             background-repeat: no-repeat;
             background-position: 0 100%;
             transition: background-size .3s ease;
+        }
+        a.nav-link {
+            font-weight: 200;
+            line-height: 2;
+        }
+        a.dropdown-item {
+            font-weight: 100;
+            line-height: 2;
+        }
+        a.dropdown-item:hover{
+            background-color: initial;
         }
         li > a:hover > span{
             text-decoration: none;
@@ -1370,20 +1381,6 @@
 
             document.querySelectorAll('a.nav-link').forEach((element, index) => {
                 element.style.color = colors[choices[index]];
-            });
-
-            document.querySelectorAll('.dropdown-item').forEach(element => {
-                let parent = element.parentElement.parentElement
-                element.onmouseenter = ev => {
-                    element.style.paddingLeft='32px';
-                    element.style.paddingTop='16px';
-                    element.style.paddingBottom='16px';
-                }
-                element.onmouseleave = ev => {
-                    element.style.paddingLeft='16px';
-                    element.style.paddingTop='4px';
-                    element.style.paddingBottom='4px';
-                }
             });
 
             playAd();
