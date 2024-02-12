@@ -1303,8 +1303,10 @@
             let uxtPanel = document.querySelector('#uxtr-panel');
             let iframes = uxtPanel.querySelectorAll('iframe');
 
-            iframes[1].style.cssText += ';height: 76px !important;';
-            iframes[0].style.cssText += ';inset:auto 0px 75px auto !important;';
+            if(iframes[0] && iframes[1]) {
+                iframes[1].style.cssText += ';height: 76px !important;';
+                iframes[0].style.cssText += ';inset:auto 0px 75px auto !important;';
+            }
         }
     </script>
 </body>
