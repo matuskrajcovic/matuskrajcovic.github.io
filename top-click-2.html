@@ -1300,10 +1300,11 @@
     <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
     <script>
         window.onload = () => {
-            setTimeout(() => {
-                window.scroll(0, 100);
-                window.scroll(0, 0);
-            }, 500)
+            let uxtPanel = document.querySelector('#uxtr-panel');
+            let iframes = uxtPanel.querySelectorAll('iframe');
+
+            iframes[1].style.cssText += ';height: 76px !important;';
+            iframes[0].style.cssText += ';inset:auto 0px 75px auto !important;';
         }
     </script>
 </body>
