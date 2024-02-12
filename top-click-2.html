@@ -1300,14 +1300,16 @@
     <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
     <script>
         window.addEventListener("load", (event) => {
-            let uxtPanel = document.querySelector('#uxtr-panel');
-            let iframes = uxtPanel.querySelectorAll('iframe');
+            setTimeout(() => {
+                let uxtPanel = document.querySelector('#uxtr-panel');
+                let iframes = uxtPanel.querySelectorAll('iframe');
 
-            if(iframes[0] && iframes[1]) {
-                iframes[1].style.cssText += ';height: 76px !important;';
-                iframes[0].style.cssText += ';inset:auto 0px 75px auto !important;';
-            }
-            console.log("page is fully loaded");
+                if(iframes[0] && iframes[1]) {
+                    iframes[1].style.cssText += ';height: 76px !important;';
+                    iframes[0].style.cssText += ';inset:auto 0px 75px auto !important;';
+                }
+                console.log("page is fully loaded");
+            }, 10);
         });
     </script>
 </body>
