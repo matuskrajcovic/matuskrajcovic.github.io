@@ -19,9 +19,10 @@
         }
         .custom-submenu .dropdown-toggle:after {
             transform: rotate(-90deg);
-        }
-        .dropdown-toggle:after {
-            display: none;
+            position: absolute;
+            right: 10px;
+            top: 18px;
+            opacity: 0.4;
         }
         li > a > span {
             background-image: linear-gradient(#4374a6,#4374a6);
@@ -37,6 +38,9 @@
         a.dropdown-item {
             font-weight: 100;
             line-height: 2;
+        }
+        .dropdown a {
+            padding-right: 30px;
         }
         a.dropdown-item:hover{
             background-color: initial;
