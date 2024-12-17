@@ -106,7 +106,8 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-weight: 600;
+		
+		font-weight: 800;
 		text-transform: uppercase;
 		color: #888;
 	}
@@ -119,10 +120,11 @@ input, select, textarea {
 
 	h2 {
 		font-size: 1.65em;
-		font-weight: 400;
+		font-weight: 800;
 		letter-spacing: 4px;
 		margin: 0 0 1.5em 0;
 		line-height: 1.75em;
+		color: #00A9E0;
 	}
 
 	h3 {
@@ -2555,6 +2557,7 @@ input, select, textarea {
 
 			h2, h3, h4, h5, h6 {
 				font-size: 1.2em;
+				font-weight: 800;
 				letter-spacing: 2px;
 				text-align: center;
 				margin: 0 0 1em 0;
